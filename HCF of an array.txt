@@ -1,0 +1,35 @@
+#include<stdio.h>
+#define MAX_SIZE 100
+int main()
+{
+    int x[MAX_SIZE];
+    int i,n;
+    printf("Enter the size of the number:");
+    scanf("%d",&n);
+
+   for(i=0;i<n;i++)
+   {
+       printf("Enter No %d :",i+1);
+       scanf("%d",&x[i]);
+   }
+
+   int hcf,j;
+   hcf=x[0];
+   j=1;
+   while(j<n)
+   {
+       if(x[j]%hcf==0)
+       {
+           j++;
+       }
+       else
+       {
+           hcf=x[j]%hcf;
+           j++;
+
+       }
+   }
+   printf("The HCF of %d numbers is %d\n",n,hcf);
+   return 0;
+
+}
